@@ -1,0 +1,656 @@
+/**
+ * stylesheet of main
+ */
+@import "reset.css";
+
+.static-img-customer {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  .server-window {
+    position: absolute;
+    //top: 8.46rem;
+    //left: 54.6%;
+    z-index: 1;
+    width: 309px;
+    height: 535px;
+    background: url("./img/bg-service.png") center / 100% no-repeat;
+    transition: all 600ms linear;
+    .server-message {
+      z-index: 2;
+      opacity: 0;
+      height: 61px;
+      margin-left: 53px;
+      padding-top: 14px;
+      padding-left: 28px;
+      color: #f3f4f5;
+      font-size: 14px;
+      line-height: 20px;
+    }
+    .server-telephone {
+      margin-top: 80px;
+      width: 210px;
+      background: url("./img/msg-server-telephone.png") center / 100% no-repeat;
+    }
+    .server-wechat {
+      margin-top: 14px;
+      width: 195px;
+      background: url("./img/msg-server-wechat.png") center / 100% no-repeat;
+
+    }
+    .server-wedding {
+      margin-top: 14px;
+      width: 173px;
+      background: url("./img/msg-server-wedding.png") center / 100% no-repeat;
+    }
+  }
+  .customer-part {
+    position: absolute;
+    //top: 187px;
+    //left: 1380px;
+    z-index: 1;
+    width: 246px;
+    height: 405px;
+    background: url("./img/bg-customer.png") center / 100% no-repeat;
+    transition: all 600ms linear;
+    display: flex;
+    flex-direction: column;
+    .customer-header {
+      margin-top: 32px;
+      margin-left: 32px;
+      height: 48px;
+      display: flex;
+      align-items: center;
+      .icon-customer {
+        width: 48px;
+        height: 48px;
+        background: url("./img/icon-customer.png") center / 100% no-repeat;
+        color: #fff;
+        font-size: 18px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .name-customer {
+        margin-left: 13px;
+        width: 74px;
+        height: 17px;
+        background: url("./img/customer-name.png") center / 100% no-repeat;
+      }
+    }
+    .process-bar {
+      margin-top: 18px;
+      margin-left: 32px;
+      width: 182px;
+      height: 6px;
+      background: rgba(245, 249, 254, 1);
+      border-radius: 3px;
+      .child-bar {
+        width: 130px;
+        height: 6px;
+        background: rgba(63, 211, 108, 1);
+        border-radius: 3px;
+      }
+    }
+    .customer-message {
+      margin-top: 20px;
+      margin-left: 20px;
+      .message-item {
+        position: relative;
+        width: 196px;
+        height: 60px;
+        color: #000;
+        font-size: 14px;
+        line-height: 20px;
+        span {
+          position: absolute;
+          top: 15px;
+          left: 65px;
+          opacity: 0;
+        }
+        &:nth-child(1) {
+          background: url("./img/msg-customer-telephone.png") center / 100% no-repeat;
+        }
+        &:nth-child(2) {
+          background: url("./img/msg-customer-wechat.png") center / 100% no-repeat;
+        }
+        &:nth-child(3) {
+          background: url("./img/msg-customer-wedding.png") center / 100% no-repeat;
+        }
+      }
+    }
+  }
+}
+
+.header {
+  height: 64px;
+  background: rgba(255, 255, 255, 1);
+  box-shadow: 0 1px 0 0 rgba(221, 221, 221, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .logo {
+    width: 113px;
+    height: 30px;
+    margin-right: 460px;
+  }
+  .nav {
+    margin-right: 431px;
+    display: flex;
+    li {
+      margin-right: 79px;
+      color: #333;
+      font-size: 16px;
+      line-height: 22px;
+    }
+  }
+  .btn-login {
+    color: #333;
+    font-size: 16px;
+    line-height: 22px;
+  }
+}
+
+.section-1 {
+  width: 100%;
+  height: calc(100% - 64px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .left {
+    max-width: 530px;
+    margin-right: 112px;
+    .title {
+      margin: 81px 0 47px 8px;
+      color: #111;
+      font-size: 58px;
+      line-height: 70px;
+    }
+    .introduce {
+      margin-left: 8px;
+      font-size: 30px;
+      line-height: 42px;
+    }
+    .btn-subscribe {
+      width: 220px;
+      height: 80px;
+      margin-top: 87px;
+      background: url("./img/btn-subscribe.png") center / 100% 100% no-repeat;
+    }
+  }
+  .right {
+    width: 770px;
+    height: 620px;
+    border: 1px solid red;
+  }
+}
+
+.section-2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .left {
+    margin: 0 82px 0 36px;
+    .title {
+      white-space: nowrap;
+      color: #333;
+      font-size: 48px;
+      line-height: 67px;
+    }
+    .introduce {
+      width: 500px;
+      margin-top: 16px;
+      color: #444;
+      font-size: 20px;
+      line-height: 28px;
+    }
+  }
+  .right {
+    position: relative;
+    min-width: 854px;
+    height: 407px;
+    margin: 82px 0 46px 0;
+    background: url("./img/bg-communicate.png") center / 100% no-repeat;
+    .decoration-1 {
+      position: absolute;
+      top: -45px;
+      right: 130px;
+      width: 116px;
+      height: 57px;
+    }
+    .decoration-2 {
+      position: absolute;
+      top: -23px;
+      right: 186px;
+      width: 140px;
+      height: 70px;
+    }
+    .greet-message {
+      padding-top: 18px;
+      font-weight: bold;
+      color: #f2f3f4;
+      display: flex;
+      justify-content: center;
+      z-index: 2;
+      opacity: 0;
+    }
+    .greet-message-1 {
+      position: absolute;
+      top: 88px;
+      left: 128px;
+      width: 90px;
+      height: 64px;
+      background: url("./img/greet-message-1.png") center / 100% no-repeat;
+      font-size: 20px;
+      line-height: 23px;
+    }
+    .greet-message-2 {
+      position: absolute;
+      top: 3px;
+      left: 273px;
+      width: 180px;
+      height: 78px;
+      background: url("./img/greet-message-2.png") center / 100% no-repeat;
+      font-size: 23px;
+      line-height: 28px;
+    }
+    .greet-message-3 {
+      position: absolute;
+      top: 113px;
+      right: 133px;
+      width: 180px;
+      height: 78px;
+      background: url("./img/greet-message-3.png") center / 100% no-repeat;
+      font-size: 24px;
+      line-height: 33px;
+    }
+  }
+}
+
+.section-3 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .left {
+    margin-right: 209px;
+    .title {
+      color: #333;
+      font-size: 48px;
+      line-height: 67px;
+      white-space: nowrap;
+    }
+    .introduce {
+      margin-top: 16px;
+      color: #444;
+      font-size: 20px;
+      line-height: 28px;
+    }
+  }
+  .right {
+    position: relative;
+    min-width: 818px;
+    height: 340px;
+    margin-top: 94px;
+    background: url("./img/bg-extract-message.png") center / 100% no-repeat;
+    .server-part {
+      position: absolute;
+      top: -52px;
+      left: 52px;
+      width: 225px;
+      height: 383px;
+      background: url("./img/bg-server-small.png") center / 100% no-repeat;
+    }
+  }
+}
+
+.section-4 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .left {
+    margin-right: 98px;
+    .title {
+      color: #333;
+      font-size: 48px;
+      line-height: 67px;
+      white-space: nowrap;
+    }
+    .introduce {
+      margin-top: 16px;
+      color: #444;
+      font-size: 20px;
+      line-height: 28px;
+    }
+  }
+  .right {
+    position: relative;
+    min-width: 831px;
+    height: 485px;
+    background: url("./img/bg-invitation.png") center / 100% no-repeat;
+    .calendar {
+      transition: all 300ms linear;
+      transform: scale(0);
+      position: absolute;
+      top: 146px;
+      right: 20px;
+      width: 362px;
+      height: 232px;
+      background: url("./img/bg-calendar.png") center / 100% no-repeat;
+      div {
+        position: absolute;
+      }
+      .date {
+        top: 11px;
+        left: 49px;
+        font-weight: bold;
+        color: #BCDCFC;
+        font-size: 36px;
+        line-height: 50px;
+      }
+      .icon-wechat {
+        top: 26px;
+        right: 62px;
+        width: 19px;
+        height: 14px;
+        background: url("./img/icon-wechat.png") center /100% no-repeat;
+      }
+      .icon-phone {
+        top: 25px;
+        right: 27px;
+        width: 15px;
+        height: 15px;
+        background: url("./img/icon-phone.png") center / 100% no-repeat;
+      }
+      .icon-customer {
+        top: 79px;
+        left: 46px;
+        width: 52px;
+        height: 52px;
+        background: url("./img/small-icon-customer.png") center / 100% no-repeat;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: #fff;
+        font-size: 16px;
+        line-height: 25px;
+      }
+      .name {
+        top: 91px;
+        left: 108px;
+        color: #000;
+        font-size: 18px;
+        line-height: 25px;
+      }
+      .icon-person {
+        top: 97px;
+        left: 169px;
+        width: 15px;
+        height: 15px;
+        background: url("./img/icon-person.png") center / 100% no-repeat;
+      }
+      .note {
+        top: 159px;
+        left: 56px;
+        color: #000;
+        font-size: 18px;
+        line-height: 25px;
+      }
+    }
+  }
+}
+
+.section-5 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .left {
+    margin-right: 209px;
+    .title {
+      color: #333;
+      font-size: 48px;
+      line-height: 67px;
+      white-space: nowrap;
+    }
+    .introduce {
+      margin-top: 16px;
+      color: #444;
+      font-size: 20px;
+      line-height: 28px;
+    }
+  }
+  .right {
+    position: relative;
+    min-width: 771px;
+    height: 457px;
+    background: url("./img/bg-assignments.png") center / 100% no-repeat;
+    .task-2,
+    .task-3,
+    .task-4 {
+      position: absolute;
+      width: 163px;
+      height: 80px;
+      background: rgba(255, 255, 255, 1);
+      box-shadow: 0 6px 7px 0 rgba(219, 233, 248, 1);
+      border-radius: 4px;
+      opacity: 0;
+    }
+    .icon-avatar {
+      position: absolute;
+      top: 18px;
+      right: 10px;
+      width: 46px;
+      height: 46px;
+      background: url("./img/task-green.png") center / 100% no-repeat;
+    }
+    .task-1 {
+      opacity: 0;
+      position: absolute;
+      top: 129px;
+      left: 69px;
+      width: 177px;
+      height: 93px;
+      background: url("./img/bg-task.png") center / 100% no-repeat;
+      .icon-avatar {
+        background: url("./img/task-orange.png") center / 100% no-repeat;
+      }
+    }
+    .task-2 {
+      top: 130px;
+      left: 299px;
+      .icon-avatar {
+        background: url("./img/task-blue.png") center / 100% no-repeat;
+      }
+    }
+    .task-3 {
+      top: 130px;
+      right: 90px;
+    }
+    .task-4 {
+      top: 231px;
+      right: 90px;
+    }
+  }
+}
+
+.section-6 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  .title {
+    color: #333;
+    font-size: 48px;
+    line-height: 67px;
+  }
+  .introduce {
+    margin-top: 16px;
+    color: #444;
+    font-size: 20px;
+    line-height: 28px;
+  }
+  .logo {
+    width: 92px;
+    height: 82px;
+    margin-top: 127px;
+    background: url("./img/wechat-logo.png") center / 100% no-repeat;
+  }
+  .text {
+    color: #666;
+    font-size: 14px;
+    line-height: 20px;
+  }
+  .function-list {
+    max-width: 356px;
+    margin-top: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    li {
+      margin-top: 36px;
+      margin-right: 22px;
+      &:nth-child(4),
+      &:nth-child(8) {
+        margin-right: 0;
+      }
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      .icon {
+        width: 64px;
+        height: 64px;
+      }
+      .icon-text {
+        color: #999;
+        font-size: 14px;
+        line-height: 20px;
+      }
+
+      .icon-email {
+        background: url("./img/icon-email.png") center / 100% no-repeat;
+      }
+      .icon-telephone {
+        background: url("./img/icon-telephone.png") center / 100% no-repeat;
+      }
+      .icon-pay {
+        background: url("./img/icon-pay.png") center / 100% no-repeat;
+      }
+      .icon-punch {
+        background: url("./img/icon-punch.png") center / 100% no-repeat;
+      }
+      .icon-approval {
+        background: url("./img/icon-approval.png") center / 100% no-repeat;
+      }
+      .icon-daily {
+        background: url("./img/icon-daily.png") center / 100% no-repeat;
+      }
+      .icon-announcement {
+        background: url("./img/icon-announcement.png") center / 100% no-repeat;
+      }
+      .icon-more {
+        background: url("./img/icon-more.png") center / 100% no-repeat;
+      }
+    }
+  }
+}
+
+.angel-recruitment {
+  width: 100%;
+  background: linear-gradient(-135.1deg, rgba(63, 211, 108, 1), rgba(58, 189, 98, 1));
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  .icon-oval {
+    display: inline-block;
+    width: 27px;
+    height: 35px;
+    background: url("./img/icon-oval.png") center / 100% no-repeat;
+  }
+  .title {
+    margin-top: 28px;
+    color: #fff;
+    font-size: 58px;
+    line-height: 81px;
+  }
+  .introduce {
+    margin-top: 12px;
+    color: #fff;
+    font-size: 20px;
+    line-height: 28px;
+  }
+  .price-list {
+    margin-top: 161px;
+  }
+  .notice {
+    margin-top: 133px;
+    color: #fff;
+    font-size: 18px;
+    line-height: 25px;
+  }
+  .btn-join {
+    width: 200px;
+    height: 60px;
+    margin-top: 34px;
+    margin-bottom: 72px;
+    border: 2px solid #fff;
+    border-radius: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    font-size: 20px;
+  }
+}
+
+.middle-footer {
+  height: 266px;
+  padding-top: 60px;
+  background: #fafbfc;
+  display: flex;
+  justify-content: center;
+  dl {
+    width: 104px;
+    margin-right: 196px;
+    display: flex;
+    flex-direction: column;
+    dt {
+      color: #333;
+      font-size: 16px;
+      line-height: 22px;
+    }
+    dd {
+      margin-top: 31px;
+      color: #999;
+      font-size: 14px;
+    }
+  }
+  .others {
+    width: 180px;
+    margin-right: 0;
+  }
+}
+
+.copyright {
+  width: 100%;
+  height: 135px;
+  background: #fafbfc;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  .dividing-line {
+    width: 1400px;
+    height: 3px;
+    background-color: #EEEDED;
+  }
+  .copyright-1,
+  .copyright-2 {
+    margin-top: 28px;
+    color: #999;
+    font-size: 12px;
+    line-height: 17px;
+  }
+  .copyright-2 {
+    margin-top: 13px;
+  }
+}

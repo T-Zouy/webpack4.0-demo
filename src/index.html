@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>海草云</title>
+    <meta name="author" content="lin_yu"/>
+    <meta name="description" content="介绍"/>
+    <meta name="keywords" content="海草云，婚礼纪"/>
+    <link rel="stylesheet" type="text/css"
+          href="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.9.7/jquery.fullpage.css"/>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.9.1/jquery-ui.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.9.7/jquery.fullpage.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#fullpage').fullpage({
+                'verticalCentered': false,
+                'css3': true,
+                'sectionsColor': ['#fff', '#fff', '#fff'],
+                'afterLoad': function (anchorLink, index) {
+                    if (index === 2) {
+                        $('.greet-message-1').addClass('show-items-3')
+                        $('.greet-message-2').addClass('show-items-1')
+                        $('.greet-message-3').addClass('show-items-2')
+                    } else if (index === 3) {
+                        $('.server-telephone').addClass('show-items-1')
+                        $('.server-wechat').addClass('show-items-2')
+                        $('.server-wedding').addClass('show-items-3')
+                        $('.customer-telephone').addClass('erase-item-1')
+                        $('.customer-wechat').addClass('erase-item-2')
+                        $('.customer-wedding').addClass('erase-item-3')
+                    } else if (index === 4) {
+                        $('.customer-part').hide()
+                        $('.calendar').addClass('calendar-larger')
+                    } else if (index === 5) {
+                        $('.task-1').addClass('show-items-1')
+                        $('.task-2').addClass('show-items-2')
+                        $('.task-3').addClass('show-items-3')
+                        $('.task-4').addClass('show-items-4')
+                    }
+                },
+                'onLeave': function (index, nextIndex, direction) {
+                    if (index === 2) {
+                        $('.greet-message-1').removeClass('show-items-3')
+                        $('.greet-message-2').removeClass('show-items-1')
+                        $('.greet-message-3').removeClass('show-items-2')
+                        if (nextIndex === 3) {
+                            let offset = serverDown()
+                            $('.server-window').addClass('server-down')
+                            $('.server-window').css({
+                                'top': `${offset.top}px`,
+                                'left': `${offset.left}px`
+                            })
+                        }
+                    } else if (index === 3) {
+                        $('.server-telephone').removeClass('show-items-1')
+                        $('.server-wechat').removeClass('show-items-2')
+                        $('.server-wedding').removeClass('show-items-3')
+                        $('.customer-telephone').removeClass('erase-item-1')
+                        $('.customer-wechat').removeClass('erase-item-2')
+                        $('.customer-wedding').removeClass('erase-item-3')
+                        if (nextIndex === 2) {
+                            let offset = serverUp()
+                            $('.server-window').removeClass('server-down')
+                            $('.server-window').css({
+                                'top': `${offset.top}px`,
+                                'left': `${offset.left}px`
+                            })
+                        } else if (nextIndex === 4) {
+                            $('.customer-part').addClass('customer-down')
+                            let offset = customerDown()
+                            $('.customer-part').css({
+                                'top': `${offset.top}px`,
+                                'left': `${offset.left}px`
+                            })
+                        }
+                    } else if (index === 4) {
+                        if (nextIndex === 3) {
+                            $('.calendar').removeClass('calendar-larger')
+                            setTimeout(function () {
+                                $('.customer-part').show()
+                                $('.customer-part').removeClass('customer-down')
+                                let offset = customerUp()
+                                $('.customer-part').css({
+                                    'top': `${offset.top}px`,
+                                    'left': `${offset.left}px`
+                                })
+                            }, 100)
+                        }
+                    } else if (index === 5) {
+                        $('.task-1').removeClass('show-items-1')
+                        $('.task-2').removeClass('show-items-2')
+                        $('.task-3').removeClass('show-items-3')
+                        $('.task-4').removeClass('show-items-4')
+                    }
+                }
+            });
+        });
+    </script>
+</head>
+<body>
+<div id="fullpage">
+    <div class="static-img-customer">
+        <div class="server-window">
+            <div class="server-message server-telephone">我的电话：1888977****</div>
+            <div class="server-message server-wechat">微信号是：XXMM****</div>
+            <div class="server-message server-wedding">婚期在五月三号哦</div>
+        </div>
+        <div class="customer-part">
+            <div class="customer-header">
+                <div class="icon-customer">客</div>
+                <div class="name-customer"></div>
+            </div>
+            <div class="process-bar">
+                <div class="child-bar"></div>
+            </div>
+            <div class="customer-message">
+                <div class="message-item">
+                    <span class="customer-telephone">1888977****</span>
+                </div>
+                <div class="message-item">
+                    <span class="customer-wechat">XXMM****</span>
+                </div>
+                <div class="message-item">
+                    <span class="customer-wedding">2018/05/03</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--顶部栏展示信息-->
+    <div class="section">
+        <div class="header">
+            <img class="logo" src="./img/logo.png"/>
+            <ul class="nav">
+                <li>产品</li>
+                <li>价格</li>
+                <li>关于我们</li>
+            </ul>
+            <div class="btn-login">登录</div>
+        </div>
+        <div class="section-1">
+            <div class="left">
+                <p class="title">用人工智能获取客户 并转化到店</p>
+                <p class="introduce">小犀牛，专注于婚礼行业的获客与管理</p>
+                <div class="btn-subscribe"></div>
+            </div>
+            <div class="right"></div>
+        </div>
+    </div>
+
+    <div class="section section-2">
+        <div class="left">
+            <div class="title">智能销售与对话</div>
+            <div class="introduce">在微信公众号、小程序、微博、婚礼纪、你的官方网站上 实现7X24小时不间断销售</div>
+        </div>
+        <div class="right" id="section-2-right">
+            <img class="decoration-1" src="./img/decoration-1.png" alt="">
+            <img class="decoration-2" src="./img/decoration-2.png" alt="">
+            <div class="greet-message greet-message-1">Hello</div>
+            <div class="greet-message greet-message-2">Hi,您好</div>
+            <div class="greet-message greet-message-3">我是乐希^_^</div>
+        </div>
+    </div>
+
+    <div class="section section-3">
+        <div class="left">
+            <div class="title">智能提取信息</div>
+            <div class="introduce">获取微信、手机、婚期、预算等关键客户信息</div>
+        </div>
+        <div class="right" id="section-3-right"></div>
+    </div>
+
+    <div class="section section-4">
+        <div class="left">
+            <div class="title">一键邀约到店</div>
+            <div class="introduce">通过手机短信、公众号、微博等渠道与客户确认到店排期</div>
+        </div>
+        <div class="right" id="section-4-right">
+            <div class="calendar">
+                <div class="date">11</div>
+                <div class="icon-wechat"></div>
+                <div class="icon-phone"></div>
+                <div class="icon-customer">客</div>
+                <div class="name">韩小雨</div>
+                <div class="icon-person"></div>
+                <div class="note">18/05/03 AM12:00 到店</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="section section-5">
+        <div class="left">
+            <div class="title">快速分配任务</div>
+            <div class="introduce">自定义服务流程，用敏捷看板有效推进工作</div>
+        </div>
+        <div class="right">
+            <div class="task-1">
+                <div class="icon-avatar"></div>
+            </div>
+            <div class="task-2">
+                <div class="icon-avatar"></div>
+            </div>
+            <div class="task-3">
+                <div class="icon-avatar"></div>
+            </div>
+            <div class="task-4">
+                <div class="icon-avatar"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="section section-6">
+        <p class="title">真正移动化管理</p>
+        <p class="introduce">针对企业微信定制，远程协作无缝对接，生态级平台带来无限可能</p>
+        <img class="logo" src="" alt="">
+        <span class="text">企业微信</span>
+        <ul class="function-list">
+            <li>
+                <div class="icon icon-email"></div>
+                <span class="icon-text">企业邮箱</span>
+            </li>
+            <li>
+                <div class="icon icon-telephone"></div>
+                <span class="icon-text">公费电话</span>
+            </li>
+            <li>
+                <div class="icon icon-pay"></div>
+                <span class="icon-text">企业支付</span>
+            </li>
+            <li>
+                <div class="icon icon-punch"></div>
+                <span class="icon-text">打卡</span>
+            </li>
+            <li>
+                <div class="icon icon-approval"></div>
+                <span class="icon-text">审批</span>
+            </li>
+            <li>
+                <div class="icon icon-daily"></div>
+                <span class="icon-text">日报</span>
+            </li>
+            <li>
+                <div class="icon icon-announcement"></div>
+                <span class="icon-text">公告</span>
+            </li>
+            <li>
+                <div class="icon icon-more"></div>
+                <span class="icon-text">更多</span>
+            </li>
+        </ul>
+    </div>
+
+    <div class="section angel-recruitment">
+        <span class="icon-oval"></span>
+        <p class="title">天使用户招募</p>
+        <p class="introduce">小犀牛将于2018年秋季正式上线，现启动天使用户计划，加入即享超值优惠</p>
+        <div class="price-list">
+            <div class="people-number">
+                <div class="people">
+                    <span class="number">200人</span>
+                    <span class="dot"></span>
+                    <span class="dash-line"></span>
+                </div>
+                <div class="people">
+                    <span class="number">400人</span>
+                    <span class="dot"></span>
+                    <span class="dash-line"></span>
+                </div>
+                <div class="people">
+                    <span class="number">600人</span>
+                    <span class="dot"></span>
+                    <span class="dash-line"></span>
+                </div>
+                <div class="people">
+                    <span class="number">800人</span>
+                    <span class="dot"></span>
+                    <span class="dash-line"></span>
+                </div>
+                <div class="people">
+                    <span class="number">1000人</span>
+                    <span class="dot"></span>
+                    <span class="dash-line"></span>
+                </div>
+            </div>
+            <div class="bg-process-bar">
+                <div class="process-bar"></div>
+            </div>
+            <div class="price">
+                <div class="price-scale">
+                    <div class="split-line-left"></div>
+                    <span class="price-number"></span>
+                    <div class="split-line-right"></div>
+                </div>
+                <div class="price-scale"></div>
+                <div class="price-scale"></div>
+                <div class="price-scale"></div>
+                <div class="price-scale"></div>
+                <div class="price-scale"></div>
+            </div>
+        </div>
+        <p class="notice">预定每满200人涨价500元，售完恢复原价</p>
+        <div class="btn-join">加入天使用户计划</div>
+    </div>
+    <div class="section fp-auto-height">
+        <div class="middle-footer">
+            <dl class="product">
+                <dt>产品</dt>
+                <dd>功能</dd>
+                <dd>价格</dd>
+            </dl>
+            <dl class="customer-service">
+                <dt>用户服务</dt>
+                <dd>定价</dd>
+                <dd>反馈意见</dd>
+                <dd>服务条款</dd>
+            </dl>
+            <dl class="partner">
+                <dt>合作伙伴</dt>
+                <dd>婚礼纪</dd>
+                <dd>酷家乐</dd>
+            </dl>
+            <dl class="company">
+                <dt>公司</dt>
+                <dd>关于我们</dd>
+                <dd>加入我们</dd>
+            </dl>
+            <dl class="others">
+                <dt>其他</dt>
+                <dd>400-117-8989</dd>
+                <dd>周一至周日 9:00-20：00</dd>
+                <dd>杭州市文一西路98号408</dd>
+            </dl>
+        </div>
+        <div class="copyright">
+            <div class="dividing-line"></div>
+            <p class="copyright-1">浙ICP备13004478号© 杭州火烧云科技有限公司</p>
+            <p class="copyright-2">浙公安备案号：33010608006591</p>
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+    /*
+     * set position
+     */
+    (function (win, doc) {
+        function calPosition() {
+            if ($('.server-down').length > 0) {
+                var position = serverDown()
+                $('.server-window').css({
+                    'top': `${position.top}px`,
+                    'left': `${position.left}px`
+                })
+            } else {
+                var position = serverUp()
+                $('.server-window').css({
+                    'top': `${position.top}px`,
+                    'left': `${position.left}px`
+                })
+            }
+            if ($('.customer-down').length > 0) {
+                var position = customerDown()
+                $('.customer-part').css({
+                    'top': `${position.top}px`,
+                    'left': `${position.left}px`
+                })
+            } else {
+                var position = customerUp()
+                $('.customer-part').css({
+                    'top': `${position.top}px`,
+                    'left': `${position.left}px`
+                })
+            }
+        }
+
+        function throttle(method, context) {
+            clearTimeout(method.tid)
+            method.tid = setTimeout(function () {
+                method.call(context)
+            }, 20)
+        }
+
+        function change() {
+            throttle(calPosition, window)
+            document.documentElement.style.fontSize = document.documentElement.clientHeight / 34 + 'px';
+        }
+
+        win.addEventListener('resize', change, false);
+        window.serverUp = function () {
+            var offset = $('#section-2-right').position()
+            return {
+                top: offset.top,
+                left: offset.left + 207
+            }
+        }
+        window.serverDown = function () {
+            var offset = $('#section-3-right').position()
+            return {
+                top: offset.top + document.documentElement.clientHeight + 43,
+                left: offset.left + 51
+            }
+        }
+        window.customerUp = function () {
+            var offset = $('#section-3-right').position()
+            return {
+                top: offset.top + document.documentElement.clientHeight,
+                left: offset.left + 500
+            }
+        }
+        window.customerDown = function () {
+            var offset = $('#section-4-right').position()
+            return {
+                top: offset.top + document.documentElement.clientHeight * 2,
+                left: offset.left + 510
+            }
+        }
+        setTimeout(function () {
+            var positionServer = serverUp()
+            $('.server-window').css({
+                'top': `${positionServer.top}px`,
+                'left': `${positionServer.left}px`
+            })
+            let positionCustomer = customerUp()
+            $('.customer-part').css({
+                'top': `${positionCustomer.top}px`,
+                'left': `${positionCustomer.left}px`
+            })
+        }, 300)
+    })(window, document)
+</script>
+</body>
+</html>

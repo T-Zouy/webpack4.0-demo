@@ -1,0 +1,98 @@
+/**
+ * animate.scss
+ */
+
+.show-items-1,
+.show-items-2,
+.show-items-3,
+.show-items-4,
+.show-items-5,
+.show-items-6 {
+  animation-name: show;
+  animation-duration: 0.3s;
+  animation-timing-function: ease;
+  //animation-iteration-count: infinite;
+  animation-fill-mode: forwards;
+  //animation-play-state: running;
+}
+
+.show-items-1 {
+  animation-delay: 1ms;
+}
+
+.show-items-2 {
+  animation-delay: 400ms;
+}
+
+.show-items-3 {
+  animation-delay: 800ms;
+}
+
+.show-items-4 {
+  animation-delay: 1.2s;
+}
+
+.show-items-5 {
+  animation-delay: 1.6s;
+}
+
+.show-items-6 {
+  animation-delay: 2s;
+}
+
+.erase-item-1,
+.erase-item-2,
+.erase-item-3 {
+  animation-name: leftEraseIn;
+  animation-duration: 0.5s;
+  animation-timing-function: ease;
+  //animation-iteration-count: infinite;
+  animation-fill-mode: forwards;
+}
+
+.erase-item-1 {
+  animation-delay: 1s;
+}
+
+.erase-item-2 {
+  animation-delay: 1.5s;
+}
+
+.erase-item-3 {
+  animation-delay: 2s;
+}
+
+@keyframes show {
+  0% {
+    opacity: 0
+  }
+  100% {
+    opacity: 1
+  }
+}
+
+@keyframes leftEraseIn {
+  0% {
+    opacity: 0;
+    left: -200px;
+  }
+  100% {
+    opacity: 1;
+    left: 65px;
+  }
+}
+
+#fullpage .static-img-customer .server-down {
+  //transform: translateY(100%);
+  width: 225px;
+  height: 388px;
+}
+
+#fullpage .static-img-customer .customer-down {
+  transform: scale(0.1);
+  opacity: 0.8;
+}
+
+#fullpage .section-4 .calendar-larger {
+  transform: scale(1);
+}
